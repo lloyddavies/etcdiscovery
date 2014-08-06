@@ -17,7 +17,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
-public class ServiceDiscoveryClientTest {
+public class ServiceDiscoveryClientUTest {
     private static final String SERVICE_TYPE = "my-service";
     private static final String HOST = "10.0.0.1";
     private static final int PORT = 8080;

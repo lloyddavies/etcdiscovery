@@ -1,7 +1,5 @@
 package net.lloyddavies.etcdiscovery.etcd;
 
-import org.glassfish.jersey.uri.internal.JerseyUriBuilder;
-
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
@@ -16,7 +14,7 @@ public class EtcdClient {
     private static final String ETCD_HOST = System.getProperty("etcd.host", "localhost");
     private static final int ETCD_PORT = Integer.valueOf(System.getProperty("etcd.port", "4001"));
 
-    private final WebTarget target = ClientBuilder.newClient().target(new JerseyUriBuilder().scheme("http").host(ETCD_HOST).port(ETCD_PORT).path("/v2/keys/"));
+    private final WebTarget target = ClientBuilder.newClient().target("http://" + ETCD_HOST + ":" + ETCD_PORT + "/v2/keys/");
 
     public void set(String dir, String key, String value, int ttl) {
         Form form = new Form();
