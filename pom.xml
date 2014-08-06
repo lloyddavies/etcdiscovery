@@ -7,6 +7,11 @@
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <!-- Skip integration tests by default as they require a running etcd instance -->
+        <skipITs>true</skipITs>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.glassfish.jersey.core</groupId>
